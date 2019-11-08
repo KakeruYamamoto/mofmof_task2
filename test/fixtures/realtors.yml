@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  house: MyString
+  price: 1
+  address: MyText
+  age: 1
+  remarkes: MyText
+
+two:
+  house: MyString
+  price: 1
+  address: MyText
+  age: 1
+  remarkes: MyText

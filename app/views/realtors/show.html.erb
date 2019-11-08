@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>House:</strong>
+  <%= @realtor.house %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @realtor.price %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @realtor.address %>
+</p>
+
+<p>
+  <strong>Age:</strong>
+  <%= @realtor.age %>
+</p>
+
+<p>
+  <strong>Remarkes:</strong>
+  <%= @realtor.remarkes %>
+</p>
+
+<%= link_to 'Edit', edit_realtor_path(@realtor) %> |
+<%= link_to 'Back', realtors_path %>
