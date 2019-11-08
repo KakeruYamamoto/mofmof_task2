@@ -1,29 +1,50 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>House:</strong>
+  <strong>物件名:</strong>
   <%= @realtor.house %>
 </p>
 
 <p>
-  <strong>Price:</strong>
-  <%= @realtor.price %>
+  <strong>賃料:</strong>
+  <%= @realtor.price %>円
 </p>
 
 <p>
-  <strong>Address:</strong>
+  <strong>住所:</strong>
   <%= @realtor.address %>
 </p>
 
 <p>
-  <strong>Age:</strong>
-  <%= @realtor.age %>
+  <strong>築年数:</strong>
+  <%= @realtor.age %>年
 </p>
 
 <p>
-  <strong>Remarkes:</strong>
+  <strong>備考:</strong>
   <%= @realtor.remarkes %>
 </p>
 
-<%= link_to 'Edit', edit_realtor_path(@realtor) %> |
-<%= link_to 'Back', realtors_path %>
+<hr>
+
+<% n = 0 %>
+<% @realtor.nearest_stations.each do |nearest_station| %>
+  <h3>最寄り駅<%= n += 1%></h3>
+  <p>
+    <strong>路線名</strong><%= nearest_station.route_name %>
+  </p>
+
+  <p>
+    <strong>駅名</strong>
+    <%= nearest_station.station_name %>
+  </p>
+
+  <p>
+    <strong>徒歩分数</strong>
+    <%= nearest_station.walking_minutes %>分
+  </p>
+
+<% end %>
+
+<%= link_to '編集', edit_realtor_path(@realtor) %> |
+<%= link_to '戻る', realtors_path %>
