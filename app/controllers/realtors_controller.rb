@@ -9,8 +9,7 @@ class RealtorsController < ApplicationController
 
   def new
     @realtor = Realtor.new
-    # 2.times { @realtor.nearest_stations.build }
-    @realtor.nearest_stations.build
+    2.times { @realtor.nearest_stations.build }
   end
 
   def edit
