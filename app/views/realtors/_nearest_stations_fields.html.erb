@@ -1,0 +1,10 @@
+<div class="nested-fields">
+  <h3><%= form.label :addresses, "最寄り駅" %></h3>
+  <%= staion.label :route_name, "路線名" %>
+  <%= staion.text_field :route_name %><br>
+  <%= staion.label :station_name, "駅名" %>
+  <%= staion.text_field :station_name %><br>
+  <%= staion.label :walking_minutes, "徒歩分数" %>
+  <%= staion.text_field :walking_minutes %>分<br>
+  <%= link_to_remove_association "remove task", f %>
+</div>
