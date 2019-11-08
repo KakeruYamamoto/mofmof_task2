@@ -18,7 +18,7 @@
 
   <div class="field">
     <%= form.label :price, "賃料" %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price %>円
   </div>
 
   <div class="field">
@@ -28,7 +28,7 @@
 
   <div class="field">
     <%= form.label :age,"築年数" %>
-    <%= form.text_field :age %>
+    <%= form.text_field :age %>年
   </div>
 
   <div class="field">
@@ -56,6 +56,6 @@
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit '登録する' %>
   </div>
 <% end %>
