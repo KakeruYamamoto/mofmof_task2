@@ -1,4 +1,4 @@
-<%= form_for(realtor) do |f| %>
+<%= form_for(realtor) do |form| %>
   <% if realtor.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(realtor.errors.count, "error") %> prohibited this realtor from being saved:</h2>
@@ -12,31 +12,41 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :house %>
-    <%= f.text_field :house %>
+    <%= form.label :house %>
+    <%= form.text_field :house %>
   </div>
 
   <div class="field">
-    <%= f.label :price %>
-    <%= f.number_field :price %>
+    <%= form.label :price %>
+    <%= form.number_field :price %>
   </div>
 
   <div class="field">
-    <%= f.label :address %>
-    <%= f.text_area :address %>
+    <%= form.label :address %>
+    <%= form.text_area :address %>
   </div>
 
   <div class="field">
-    <%= f.label :age %>
-    <%= f.number_field :age %>
+    <%= form.label :age %>
+    <%= form.number_field :age %>
   </div>
 
   <div class="field">
-    <%= f.label :remarkes %>
-    <%= f.text_area :remarkes %>
+    <%= form.label :remarkes %>
+    <%= form.text_area :remarkes %>
+  </div>
+
+  <div class="nearest_stations">
+    <%= form.fields_for :nearest_stations do |f| %>
+      <%= f.label "タグ" %>
+      <%= render "nearest_station_fields", f: f %>
+    <% end %>
+    <div class="links">
+       <%= link_to_add_association "タグを追加", form, :nearest_stations %>
+    </div>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= form.submit %>
   </div>
 <% end %>
