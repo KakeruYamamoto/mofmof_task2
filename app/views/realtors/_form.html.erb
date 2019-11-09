@@ -36,10 +36,12 @@
     <%= form.text_area :remarkes %>
   </div>
 
+  <hr>
+
   <div class="nearest_stations">
     <% n = 0 %>
     <%= form.fields_for :nearest_stations do |f| %>
-      <h3><%= f.label "最寄り駅#{n += 1}" %></h3>
+      <h3><%= f.label "最寄駅#{n += 1}" %></h3>
       <%= f.label :route_name, "路線名" %>
       <%= f.text_field :route_name %><br>
       <%= f.label :station_name, "駅名" %>
@@ -47,12 +49,6 @@
       <%= f.label :walking_minutes, "徒歩分数" %>
       <%= f.text_field :walking_minutes %>分
     <% end %>
-    <%= form.fields_for :nearest_stations do |f| %>
-      <%= render "nearest_station_fields", f: f %>
-    <% end %>
-    <div class="links">
-       <%= link_to_add_association "最寄り駅を追加", form, :nearest_stations %>
-    </div>
   </div>
 
   <div class="actions">

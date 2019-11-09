@@ -9,7 +9,7 @@ class RealtorsController < ApplicationController
 
   def new
     @realtor = Realtor.new
-    2.times { @realtor.nearest_stations.build }
+    5.times { @realtor.nearest_stations.build }
   end
 
   def edit
@@ -55,7 +55,7 @@ class RealtorsController < ApplicationController
     end
 
     def realtor_params
-      params.require(:realtor).permit(:house, :price, :address, :age, :remarkes,
-                                      nearest_stations_attributes: [:route_name, :station_name, :walking_minutes])
+      prms = params.require(:realtor).permit(:house, :price, :address, :age, :remarkes,
+                                      nearest_stations_attributes: [ :id,:route_name, :station_name, :walking_minutes, :_destroy])
     end
 end
