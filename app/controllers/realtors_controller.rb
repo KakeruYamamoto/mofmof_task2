@@ -13,6 +13,7 @@ class RealtorsController < ApplicationController
   end
 
   def edit
+    @realtor.nearest_stations.build
   end
 
   def create
